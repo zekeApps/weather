@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>Zeke Weather</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand">
+	</head>
+	<body>
+		<header class="main-header">
+			<h1>Zeke Weather</h1>
+			<h2>An awesome way to see how we burnt by global warming</h2>
+		</header>
+		<div class="loader">Please wait, getting your current Location</div>
+		<form action="" class="search">
+			<input type="text" data-input="cityAdd" class = "search__text" placeholder = "Type a City">
+			<input type="submit" data-button="add" class="search__btn btn" value = "Add city">
+		</form>
+
+		<main class="cards-group">
+			<template id="template--city">
+				<div class="card">
+					<header class="card__header">
+						<h3 data-city class="card__title"></h3>
+						<h4 data-time class="card__date"></h4>
+					</header>
+					<div class="card__info">
+						<img data-icon src="" alt="" class="card__image">
+						<span data-temp="max" class="card__maxt"></span>
+						<span data-temp="min" class="card__mint"></span>
+						<span data-temp="current" class="card__temp"></span>
+					</div>
+				</div>
+			</template>
+		</main>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	 <script src="js/index.js"></script>
+	</body>
+</html>
