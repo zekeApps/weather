@@ -12,6 +12,8 @@
 
   	var today = new Date();
 	var timeNow = today.toLocaleTimeString();
+	var cities = [];
+
 
 	var cityWeather = {};    
 	cityWeather.zone;
@@ -24,7 +26,7 @@
 	$( buttonAdd ).on("click", addNewCity);
 	$ ( cityAdd ).on("keypress"), function(event){
 		if(event.which==13){
-			addNewCity();
+			addNewCity(event);
 		}
 	}
 
@@ -98,9 +100,8 @@ function addNewCity(event){
 }
 
 function getWeatherNewCity(data) {
-
 	$.getJSON(API_WT_URL + $(cityAdd).val(), function (response){
-		
+	$(cityAdd).val("");
 	cityWeather = {}
 	cityWeather.zone = data.name;
 	cityWeather.icon = API_IMG_WEATHER + data.weather[0].icon + ".png";
@@ -108,10 +109,10 @@ function getWeatherNewCity(data) {
 	cityWeather.temp_max = data.main.temp_max - 273.15;
 	cityWeather.temp_min = data.main.temp_min - 273.15;
 	cityWeather.main = data.weather[0].main;
-	
-
 	renderTemplate(cityWeather, response.data.time_zone[0].localtime.split(" ")[1]);
 
+	cities.push(cityWeather);
+	localStorage.setItem("cities", JSON.stringify(cities));
 	});
 
 

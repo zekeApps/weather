@@ -55,7 +55,7 @@ input[type="submit"] {
 */
 .main-header {
   text-align: center;
-  background-color: #16210b;
+  background-color: #3F373B;
   color: white;
   padding: .4em; }
 
@@ -86,13 +86,13 @@ input[type="submit"] {
 */
 .card {
   position: relative;
-  height: 20vh;
-  width: 100vw;
+  height: 150px;
+  
   background-size: cover;
   background-position: center;
   color: white;
   text-shadow: 0 0 5px black;
-  background-color: #F2F2F2;
+  background-color: #2A001B;
   padding: .4em;
   margin-bottom: 0.4em;
   -webkit-box-sizing: border-box;
@@ -115,6 +115,8 @@ input[type="submit"] {
 
 .card__info {
   position: absolute;
+  overflow: hidden;
+  height: 100%;
   bottom: .4em;
   left: .4em;
   font-size: .7rem;
@@ -123,7 +125,7 @@ input[type="submit"] {
   .card__image {
     display: block; }
   .card__maxt {
-    color:#37b948;
+    color:#8E8E8E;
     text-shadow: none;
   }
     .card__maxt::before {
@@ -133,7 +135,7 @@ input[type="submit"] {
       content: "°C";
     }
   .card__mint {
-    color: #bc2929;
+    color: #F04040;
     text-shadow:none;
   }
     .card__mint::before {
@@ -144,9 +146,11 @@ input[type="submit"] {
 
   .card__temp {
     display: block;
+    background-color: rgba(255, 255, 255, 0.17);
     font-size: 3rem;
     line-height: 1; }
       .card__temp::after {
+        font-size: 2rem;
         content: "°C";
       }
 /*
